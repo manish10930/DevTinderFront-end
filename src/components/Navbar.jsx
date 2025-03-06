@@ -15,6 +15,7 @@ function Navbar() {
     const handleLogout=()=>{    
         localStorage.removeItem("token")
         console.log("logged out")
+        window.location.reload()
         navigate("/login")
     }
     const IsUserLoggedIn=localStorage.getItem("token")
@@ -28,7 +29,10 @@ function Navbar() {
 
                     {
                         IsUserLoggedIn?
-                        <button class="btn btn-dash btn-accent mx-5" onClick={()=>handleLogout()}>Logout</button>:
+                         <div>
+                            <button class="btn btn-dash btn-accent mx-5" onClick={()=>goTo("/connections")}>Connections</button>
+                            <button class="btn btn-dash btn-accent mx-5" onClick={()=>handleLogout()}>Logout</button>
+                             </div> :
                         <button class="btn btn-dash btn-accent mx-5" onClick={()=>goTo("/login")}>Login</button>
 
                     }

@@ -5,10 +5,15 @@ import Footer from './components/Footer'
 import SpinWheel from './components/spinWheel'
 
 import { useNavigate } from 'react-router'
+import Feed from './pages/Feed'
 function Body() {
 
   const navigate=useNavigate()
 
+  const token=localStorage.getItem("token")
+  if(token===null){
+      navigate("/login")
+  }
   const goTo=(str)=>{
       navigate(str)
       console.log("clicked")
@@ -17,8 +22,7 @@ function Body() {
     <div>
       <Navbar/>
       <Outlet/>
-      <button class="btn btn-dash btn-accent mx-5" onClick={()=>goTo("/profile")}>Profile</button>:
-
+      {/* <Feed/> */}
       <SpinWheel/>
       <Footer/>
     </div>
