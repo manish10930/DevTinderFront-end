@@ -13,16 +13,16 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Body />} >
-        <Route path="/" element={<Feed/>} />
-        <Route path="/Connections" element={<Connections/>} />
+        <Routes>
+          <Route path="/" element={<Body />} >
+            <Route path="/" element={<Feed />} />
+            <Route path="/Connections" element={<Connections />} />
 
-          <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<SignUp/>} />
-          <Route path='/profile' element={<Profile/>} />
-        </Route>
-      </Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path='/profile' element={<Profile />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   )
